@@ -14,7 +14,7 @@ def main():
     """
     To run script open commond line and path into directory containing
     this script.  Type python rl_strings.py <file_of_mined_data> <save_path>
-    Ex) python Distict_Brands.txt rl_strings.csv
+    Ex) python rl_strings.py Distict_Brands.txt rl_strings.csv
     
     First argument: path to .txt filewith mined data
     Second argument: path of where to save a .csv file with Ralph Lauren strings

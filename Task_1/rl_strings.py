@@ -13,7 +13,7 @@ import sys
 def main():
     """
     To run script open commond line and path into directory containing
-    this script.  Type python <file_of_mined_data> <save_path>
+    this script.  Type python rl_strings.py <file_of_mined_data> <save_path>
     Ex) python Distict_Brands.txt rl_strings.csv
     
     First argument: path to .txt filewith mined data

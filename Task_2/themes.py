@@ -9,13 +9,20 @@ import sys
 import pandas as pd
 
 def main():
+    """
+    script to read in csv file and out analysis on themes
+    
+    To run script open commond line and path into directory containing
+    this script.  Type python themes.py <csv_data>
+    Ex) python themes.py APPAREL_ids_1_2019.csv
+    
+    First argument: path to csv file to load in
+    """
     script = sys.argv[0]
     file_path = sys.argv[1]
     
-    with open(file_path, mode='r') as file:
-        data = file.read()
-
-    df = pd.read_csv(data)
+    #read in csv
+    df = pd.read_csv(file_path)
     
     #get totals and percentages for each theme
     use_neg, use_pos, use_total = get_theme_totals(df, themes[0][0], themes[0][1])
@@ -33,6 +40,7 @@ def main():
     quality_neg, quality_pos, quality_total = get_theme_totals(df, themes[4][0], themes[4][1])
     quality_negp, quality_posp = theme_percentages(quality_neg, quality_pos, quality_total)
     
+    #print out analysis
     print(f'OUT OF {len(df)} REVIEWS\n')
     print(f'Use Theme:\n # of total occurances: {use_total},\n # of pos reviews: {use_pos}'+\
           f' | {use_posp}%\n # of neg reviews: {use_neg} | {use_negp}%\n')
@@ -45,7 +53,8 @@ def main():
     print(f'Quality Theme:\n # of total occurances: {quality_total},\n # of pos reviews: {quality_pos}'+\
           f' | {quality_posp}%\n # of neg reviews: {quality_neg} | {quality_negp}%\n')
     
-#The Themese    
+    
+#The Themes    
 themes = [('use_sentiment_label', 'use_theme_exists'), ('fit_sentiment_label', 'fit_theme_exists'),
           ('value_sentiment_label', 'value_theme_exists'),('style_sentiment_label', 'style_theme_exists'),
           ('quality_sentiment_label', 'quality_theme_exists')]

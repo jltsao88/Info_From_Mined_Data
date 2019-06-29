@@ -34,12 +34,6 @@ def main():
     model_df = pd.read_csv(pred_file)
     #Human Validator Set
     human_df = pd.read_csv(val_file)
-    
-    #Find rows present human model not present in the prediction model
-    ids2 = []
-    for id1 in list(human_df._id):
-        if id1 not in list(model_df._id):
-            ids2.append(id1)
             
     #Remove Rows from model_df not in human_df
     model_df = model_df[model_df._id.isin(list(human_df._id))]

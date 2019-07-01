@@ -167,8 +167,7 @@ def recall_score(mat):
     return (mat[0][0]) / (mat[0][0] + mat[1][0])
 
 def f1_score(precision, recall):
-    #takes in argument as a 2x2 confonsion matrix per Task3 request
-    #[[true positve, false positive], [false negative, true negative]]
+    #takes in arguments precision and recall scores
     #recall = 2 x ((precision x recall)/(precision + recall))
     #harmonic mean of precision and recall
     
